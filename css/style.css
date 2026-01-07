@@ -1,0 +1,68 @@
+body{
+ font-family: Arial;
+ background:#fff0f5;
+ margin:0;
+ text-align:center;
+}
+
+nav{
+ background:#ff3366;
+ padding:15px;
+}
+
+nav a, nav h2{
+ color:white;
+ margin:10px;
+ text-decoration:none;
+ display:inline-block;
+}
+
+.hero{
+ padding:90px;
+}
+
+.btn{
+ background:#ff3366;
+ color:white;
+ padding:14px 28px;
+ text-decoration:none;
+ border-radius:8px;
+}
+
+.card{
+ background:white;
+ width:320px;
+ margin:60px auto;
+ padding:25px;
+ border-radius:12px;
+ box-shadow:0 0 12px gray;
+}
+
+input, button{
+ width:90%;
+ padding:10px;
+ margin:10px;
+}
+
+button{
+ background:#ff3366;
+ color:white;
+ border:none;
+ border-radius:8px;
+ cursor:pointer;
+}
+
+.sos{
+ background:red;
+ font-size:22px;
+ padding:18px;
+}
+
+.dashboard{
+ margin-top:60px;
+}
+
+.note{
+ font-size:12px;
+ color:gray;
+}
