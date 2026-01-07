@@ -1,11 +1,12 @@
-function login(){
- let email = document.getElementById("email").value;
- let password = document.getElementById("password").value;
+function login() {
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
 
- if(email==="user@example.com" && password==="123456"){
-   alert("Login Successful");
-   window.location="dashboard.html";
- }else{
-   alert("Invalid Email or Password");
- }
+  if(email === "admin@example.com" && password === "123456") {
+    window.location.href="dashboard.html";
+  } else if(email === "user@example.com" && password === "123456") {
+    window.location.href="dashboard.html";
+  } else {
+    alert("Invalid credentials");
+  }
 }
