@@ -1,0 +1,11 @@
+function login(){
+ let email = document.getElementById("email").value;
+ let password = document.getElementById("password").value;
+
+ if(email==="user@example.com" && password==="123456"){
+   alert("Login Successful");
+   window.location="dashboard.html";
+ }else{
+   alert("Invalid Email or Password");
+ }
+}
