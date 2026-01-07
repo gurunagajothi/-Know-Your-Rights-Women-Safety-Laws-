@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Women Safety Rules & Laws</title>
+<title>Rules & Laws</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- TOP NAVBAR -->
 <nav class="top-nav">
-  <h2>Women Safety</h2>
-  <a href="index.html">Home</a>
-  <a href="dashboard.html">Dashboard</a>
-  <a href="laws.html">Rules & Laws</a>
-  <a href="login.html">Login</a>
+<a href="index.html">Home</a>
+<a href="dashboard.html">Dashboard</a>
+<a href="chatbot.html">Help Bot</a>
 </nav>
 
-<!-- SECOND NAVBAR -->
-<div class="sub-nav">
-  <a href="#rules">Safety Rules</a>
-  <a href="#numbers">Helpline</a>
-  <a href="#laws">Acts</a>
-</div>
+<select onchange="changeLanguage(this.value)">
+<option value="en">English</option>
+<option value="ta">தமிழ்</option>
+<option value="hi">Hindi</option>
+</select>
 
 <div class="card" id="lawsContent">
+<h2 id="title">Women Safety Rules</h2>
+<p id="rule1">Always stay alert</p>
+<p id="rule2">Share your location</p>
 
-<h2 id="rules">🛑 Women Safety Rules</h2>
-<p>✔ Always stay alert</p>
-<p>✔ Share your location</p>
-<p>✔ Avoid lonely places</p>
-<p>✔ Say NO loudly</p>
-<p>✔ Use SOS button</p>
+<button onclick="startReading()">🔊 Start</button>
+<button onclick="stopReading()">⏹ Stop</button>
 
-<div class="audio-controls">
-<button onclick="startReading()">🔊 Start Reading</button>
-<button onclick="stopReading()">⏹ Stop Reading</button>
+<h3>Emergency Numbers</h3>
+<p>181 | 112 | 108</p>
+
+<h3>Important Acts</h3>
+<p>IPC 354 – Bad Touch</p>
+<p>Domestic Violence Act</p>
 </div>
 
-<h2 id="numbers">📞 Emergency Numbers</h2>
-<p>Women Helpline: <b>181</b></p>
-<p>Police: <b>112</b></p>
-<p>Ambulance: <b>108</b></p>
-<p>Child Helpline: <b>1098</b></p>
-
-<h2 id="laws">⚖️ Women Safety Laws</h2>
-<p><b>IPC 354:</b> Bad touch – Jail</p>
-<p><b>IPC 354A:</b> Sexual harassment</p>
-<p><b>IPC 375:</b> Rape – Serious crime</p>
-<p><b>Domestic Violence Act:</b> Protection for women</p>
-<p><b>Dowry Prohibition Act:</b> Illegal dowry demand</p>
-
-</div>
-
+<script src="js/language.js"></script>
 <script src="js/speech.js"></script>
 </body>
 </html>
