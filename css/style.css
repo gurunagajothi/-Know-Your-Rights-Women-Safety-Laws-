@@ -82,3 +82,27 @@ button:hover{
  font-size:22px;
  padding:18px;
 }
+
+.quick-bar {
+  position: sticky;
+  top: 0;
+  background: #ff4081;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  z-index: 1000;
+}
+
+.quick-bar button {
+  border: none;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.high-contrast {
+  background: black !important;
+  color: yellow !important;
+}
+
