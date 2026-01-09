@@ -139,6 +139,22 @@ function fakeCall() {
 }
 
 
+// ===== ADMIN DASHBOARD UI =====
+if (localStorage.getItem("role") === "admin") {
+  document.querySelector(".dashboard-container").insertAdjacentHTML(
+    "beforeend",
+    `
+    <div class="card">
+      <h3>👨‍💼 Admin Dashboard</h3>
+      <p>Total Users: 120</p>
+      <p>Reports Received: 8</p>
+      <p>System Status: Active</p>
+    </div>
+    `
+  );
+}
+
+
 </script>
 
 </body>
