@@ -142,4 +142,15 @@ button:hover{
   to { opacity: 1; transform: translateY(0); }
 }
 
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: white;
+}
+
+
 
