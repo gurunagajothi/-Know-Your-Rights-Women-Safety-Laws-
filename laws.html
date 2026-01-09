@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Women Safety Rules & Laws</title>
+<title>Know Your Rights – Women Safety</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Bootstrap -->
@@ -15,24 +15,36 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
-#progressBar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 5px;
-  background: #ff3366;
-  width: 0%;
-  z-index: 1000;
+/* 🌈 Gradient Header */
+.hero {
+  background: linear-gradient(135deg,#ff5f9e,#ff9966,#ffc371);
+  color: white;
+  padding: 50px 20px;
+  text-align: center;
 }
-.highlight {
-  background: #fff3cd;
+
+/* 🌈 Law Cards */
+.law-card {
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+  transition: transform .3s;
+}
+.law-card:hover { transform: scale(1.03); }
+
+.bg1 { background: linear-gradient(135deg,#ff416c,#ff4b2b); }
+.bg2 { background: linear-gradient(135deg,#36d1dc,#5b86e5); }
+.bg3 { background: linear-gradient(135deg,#11998e,#38ef7d); }
+
+.read-box {
+  background: linear-gradient(135deg,#845ec2,#d65db1);
+  color: white;
+  border-radius: 16px;
 }
 </style>
 </head>
 
 <body class="bg-pink-50">
-
-<div id="progressBar"></div>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger px-3">
@@ -43,16 +55,16 @@
   </div>
 </nav>
 
-<!-- HEADER -->
-<header class="text-center py-4">
-  <h1 class="text-4xl font-bold text-pink-600">
+<!-- 🌈 HERO -->
+<section class="hero">
+  <h1 class="text-4xl font-bold">
     <i class="fa-solid fa-shield-heart"></i> Know Your Rights
   </h1>
-  <p class="text-gray-600">Awareness is your strongest protection</p>
-</header>
+  <p class="mt-2 text-lg">Colorful awareness for strong protection</p>
+</section>
 
 <!-- LANGUAGE -->
-<div class="container mb-3 text-center">
+<div class="container mt-4 text-center">
   <select class="form-select w-50 mx-auto" onchange="changeLanguage(this.value)">
     <option value="en">English</option>
     <option value="ta">தமிழ்</option>
@@ -60,99 +72,61 @@
   </select>
 </div>
 
-<!-- MAIN CONTENT -->
-<div class="container mb-5" id="lawsContent">
-
-<!-- READ ALOUD CONTROLS -->
-<div class="card p-3 mb-3 shadow">
-  <h5><i class="fa-solid fa-volume-high"></i> Accessibility Support</h5>
-  <button class="btn btn-danger me-2" onclick="startReading()">Start</button>
-  <button class="btn btn-warning me-2" onclick="pauseReading()">Pause</button>
-  <button class="btn btn-secondary" onclick="stopReading()">Stop</button>
+<!-- READ ALOUD -->
+<div class="container mt-4">
+  <div class="read-box p-4 text-center shadow">
+    <h4><i class="fa-solid fa-volume-high"></i> Accessibility</h4>
+    <button class="btn btn-light m-1" onclick="startReading()">▶ Start</button>
+    <button class="btn btn-warning m-1" onclick="pauseReading()">⏸ Pause</button>
+    <button class="btn btn-dark m-1" onclick="stopReading()">⏹ Stop</button>
+  </div>
 </div>
 
-<!-- ACCORDION LAWS -->
-<div class="accordion shadow" id="lawsAccordion">
+<!-- 🌈 LAW CARDS -->
+<div class="container mt-5" id="lawsContent">
+  <div class="row g-4">
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#law1">
-IPC 354 – Protection from Harassment
-</button>
-</h2>
-<div id="law1" class="accordion-collapse collapse show">
-<div class="accordion-body law-text">
-Any physical contact or advances against a woman without consent is punishable.
-</div>
-</div>
-</div>
+    <div class="col-md-4">
+      <div class="law-card bg1 shadow">
+        <h5><i class="fa-solid fa-gavel"></i> IPC 354</h5>
+        <p id="rule1">Protects women from harassment and assault.</p>
+        <span class="badge bg-light text-dark">Legal Right</span>
+      </div>
+    </div>
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#law2">
-Domestic Violence Act
-</button>
-</h2>
-<div id="law2" class="accordion-collapse collapse">
-<div class="accordion-body law-text">
-Protects women from physical, emotional, and economic abuse.
-</div>
-</div>
-</div>
+    <div class="col-md-4">
+      <div class="law-card bg2 shadow">
+        <h5><i class="fa-solid fa-house"></i> Domestic Violence Act</h5>
+        <p id="rule2">Protection from physical, mental and emotional abuse.</p>
+        <span class="badge bg-light text-dark">Safety Act</span>
+      </div>
+    </div>
 
-<div class="accordion-item">
-<h2 class="accordion-header">
-<button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#law3">
-Cyber Crime & Online Safety
-</button>
-</h2>
-<div id="law3" class="accordion-collapse collapse">
-<div class="accordion-body law-text">
-Covers stalking, threats, and harassment through digital platforms.
-</div>
-</div>
+    <div class="col-md-4">
+      <div class="law-card bg3 shadow">
+        <h5><i class="fa-solid fa-laptop"></i> Cyber Safety</h5>
+        <p>Protects against online harassment and stalking.</p>
+        <span class="badge bg-light text-dark">Cyber Law</span>
+      </div>
+    </div>
+
+  </div>
 </div>
 
-</div>
-
-<!-- QUICK EMERGENCY ACTIONS -->
-<div class="card mt-4 p-3 shadow">
-<h5><i class="fa-solid fa-phone"></i> Emergency Actions</h5>
-<button class="btn btn-outline-danger me-2" onclick="alert('Calling 112')">Call 112</button>
-<button class="btn btn-outline-warning me-2" onclick="alert('Calling Women Helpline 181')">Call 181</button>
-<button class="btn btn-outline-success" onclick="alert('Location Shared')">Share Location</button>
-</div>
-
-<!-- DID YOU KNOW -->
-<div class="card mt-4 p-3 shadow">
-<h5><i class="fa-solid fa-lightbulb"></i> Did You Know?</h5>
-<p id="tipText">Loading safety tip...</p>
-<button class="btn btn-sm btn-danger" onclick="loadTip()">Refresh Tip</button>
-</div>
-
+<!-- 🌈 EMERGENCY -->
+<div class="container mt-5 mb-5">
+  <div class="card p-4 shadow text-center">
+    <h4 class="text-danger"><i class="fa-solid fa-phone"></i> Emergency Help</h4>
+    <button class="btn btn-danger m-1">Call 112</button>
+    <button class="btn btn-warning m-1">Women Helpline 181</button>
+    <button class="btn btn-success m-1">Share Location</button>
+  </div>
 </div>
 
 <!-- SCRIPTS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
 <script src="js/speech.js"></script>
 <script src="js/language.js"></script>
-
-<script>
-/* Scroll Progress */
-window.onscroll = () => {
-  const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
-  document.getElementById("progressBar").style.width = scrolled + "%";
-};
-
-/* Async API */
-async function loadTip() {
-  const res = await fetch("https://api.adviceslip.com/advice");
-  const data = await res.json();
-  document.getElementById("tipText").innerText = data.slip.advice;
-}
-loadTip();
-</script>
 
 </body>
 </html>
