@@ -2,71 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<title>Women Safety | Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard</title>
+
 <link rel="stylesheet" href="css/style.css">
-<div class="card" style="
-  max-width: 400px;
-  margin: 80px auto;
-  padding: 20px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  border-radius: 12px;">
-  
-  <h3>👤 User Profile</h3>
-
-  <p><b>Name:</b> <span id="userName"></span></p>
-  <p><b>Login Type:</b> <span id="loginType"></span></p>
-
-</div>
-
 </head>
+
 <body>
 
-<button onclick="logout()" style="
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  background: red;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;">
-  🚪 Logout
-</button>
-
-
-<nav class="top-nav">
-<h2>Dashboard</h2>
-<a href="laws.html">Rules</a>
-<a href="chatbot.html">Help Bot</a>
-<a href="index.html">Logout</a>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <h2>👩 Women Safety</h2>
+  <div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="laws.html">Know Your Rights</a>
+    <a href="chatbot.html">Support Bot</a>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+  </div>
 </nav>
 
-<div class="card">
-<h2>Welcome 👩</h2>
-<button class="sos" onclick="sendSOS()">🚨 SOS</button>
-<button onclick="fakeCall()">📞 Fake Call</button>
-<p id="location">Location not shared</p>
-<div id="map" style="height:250px;margin-top:15px;"></div>
-</div>
-
-<script src="js/sos.js"></script>
-<script src="js/fakecall.js"></script>
-<script src="js/panic.js"></script>
-<script src="js/maps.js"></script>
-<script>
-  const user = localStorage.getItem("loggedInUser");
-  const type = localStorage.getItem("loginType") || "Email";
-
-  if (!user) {
-    window.location.href = "login.html";
-  }
-
-  document.getElementById("userName").innerText = user;
-  document.getElementById("loginType").innerText = type;
-</script>
-
-</body>
-</html>
+<!-- ===== MAIN DASHBOARD =====
