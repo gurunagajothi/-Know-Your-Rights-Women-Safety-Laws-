@@ -106,3 +106,40 @@ button:hover{
   color: yellow !important;
 }
 
+.timeline {
+  position: relative;
+  margin: 40px auto;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background: #ff4081;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 20px;
+  position: relative;
+  animation: slideUp 1s ease;
+}
+
+.timeline-item.left { left: 0; }
+.timeline-item.right { left: 50%; }
+
+.timeline .content {
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
