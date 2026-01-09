@@ -1,28 +1,16 @@
-let synth = window.speechSynthesis;
 let utterance;
-let currentLang = "en-IN"; // default English
 
-function setLanguage(lang) {
-  if (lang === "en") currentLang = "en-IN";
-  if (lang === "ta") currentLang = "ta-IN";
-  if (lang === "hi") currentLang = "hi-IN";
-}
-
-function startReading() {
-  stopReading();
-
+function readLaws() {
   const text = document.getElementById("lawsContent").innerText;
+  const lang = document.getElementById("languageSelect").value;
 
   utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = currentLang;
-  utterance.rate = 1;
-  utterance.pitch = 1;
+  utterance.lang = lang;
 
-  synth.speak(utterance);
+  window.speechSynthesis.cancel(); // stop previous
+  window.speechSynthesis.speak(utterance);
 }
 
 function stopReading() {
-  if (synth.speaking) {
-    synth.cancel();
-  }
+  window.speechSynthesis.cancel();
 }
