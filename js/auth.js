@@ -1,17 +1,30 @@
-function socialLogin(platform) {
-  // show fake loading
-  alert(`Connecting to ${platform}...`);
+document.getElementById("loginForm").addEventListener("submit", function (e) {
+  e.preventDefault();
 
-  // simulate login delay
-  setTimeout(() => {
-    localStorage.setItem("loggedInUser", platform + " User");
-    localStorage.setItem("loginType", platform);
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const password = document.getElementById("password").value;
 
-    // redirect
-    window.location.href = "dashboard.html";
-  }, 1200);
-}
-function logout() {
-  localStorage.clear();
-  window.location.href = "login.html";
-}
+  if (name.length < 3) {
+    alert("Please enter a valid name");
+    return;
+  }
+
+  if (!email.includes("@") || !email.includes(".")) {
+    alert("Please enter a valid email address");
+    return;
+  }
+
+  if (password.length < 6) {
+    alert("Password must be at least 6 characters");
+    return;
+  }
+
+  // Save login info
+  localStorage.setItem("loggedInUser", name);
+  localStorage.setItem("userEmail", email);
+  localStorage.setItem("loginType", "Email");
+
+  // Redirect
+  window.location.href = "dashboard.html";
+});
